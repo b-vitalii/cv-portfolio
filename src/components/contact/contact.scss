@@ -1,0 +1,95 @@
+@import "../../global.scss";
+
+.contact {
+  background-color: white;
+  display: flex;
+  background: url("https://it-tuner.ru/upload/news/2020/06/kak-sdelat-obycnyi-zvonok-esli-telefon-ne-lovit-set20_06_04-10_40_49.jpeg")
+    no-repeat;
+  background-size: 100%;
+
+  @include mobile {
+    flex-direction: column;
+    background: none;
+  }
+
+  .left {
+    flex: 1;
+    overflow: hidden;
+    height: 300px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 100px;
+
+    img {
+      height: 85%;
+      transition: all 0.5s ease;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+      font-size: 30px;
+    }
+
+    form {
+      width: 70%;
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+      input {
+        width: 300px;
+        height: 30px;
+        font-size: 14px;
+
+        @include mobile {
+          width: 200px;
+          height: 20px;
+        }
+      }
+
+      textarea {
+        width: 300px;
+        height: 200px;
+        font-size: 14px;
+
+        @include mobile {
+          width: 200px;
+          height: 100px;
+        }
+      }
+
+      button {
+        width: 150px;
+        height: 30px;
+        color: white;
+        background-color: crimson;
+        border: none;
+        border-radius: 10px;
+        font-weight: 500;
+        cursor: pointer;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      span {
+        color: green;
+      }
+    }
+  }
+}

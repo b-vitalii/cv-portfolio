@@ -1,0 +1,147 @@
+@import "../../global.scss";
+
+.works {
+  background-color: rgb(52, 184, 184);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: url("https://kakprosto.info/wp-content/uploads/2019/10/projector-presentation.jpg")
+    no-repeat;
+  background-size: 100%;
+
+  @include mobile {
+    background: none;
+  }
+
+  .arrow {
+    height: 50px;
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    @include mobile {
+      display: none;
+    }
+
+    &.left {
+      left: 100px;
+      transform: rotateY(180deg);
+    }
+
+    &.right {
+      right: 100px;
+    }
+  }
+
+  .slider {
+    height: 350px;
+    display: flex;
+    position: absolute;
+    left: 0;
+    transition: all 1s ease-out;
+
+    @include mobile {
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .item {
+        width: 700px;
+        height: 100%;
+        background-color: $mainColor;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+
+        @include mobile {
+          width: 80%;
+          height: 150px;
+          margin: 15px 0;
+        }
+
+        .left {
+          flex: 4;
+          height: 90%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .leftContainer {
+            width: 90%;
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .imgContainer {
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              background-color: rgb(170, 44, 164);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              @include mobile {
+                width: 20px;
+                height: 20px;
+              }
+
+              img {
+                width: 35px;
+
+                @include mobile {
+                  width: 15px;
+                }
+              }
+            }
+            h2 {
+              font-size: 20px;
+
+              @include mobile {
+                font-size: 13px;
+              }
+            }
+            p {
+              font-size: 13px;
+              font-weight: 500;
+              @include mobile {
+                display: none;
+              }
+            }
+            span {
+              font-size: 14px;
+              font-weight: 600;
+              text-decoration: underline;
+              cursor: pointer;
+              color: rgb(170, 44, 164);
+            }
+          }
+        }
+        .right {
+          flex: 8;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+
+          img {
+            width: 400px;
+            transform: rotate(-10deg);
+          }
+        }
+      }
+    }
+  }
+}
